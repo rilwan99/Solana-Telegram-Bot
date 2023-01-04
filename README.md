@@ -8,5 +8,6 @@ A telegram bot that interacts directly with the Solana blockchain!
     pip install python-telegram-bot --pre\
     pip install python-dotenv\
     pip install requests
+1. npm install
 2. solana config set --url devnet
-3. anchor test
+3. anchor test --provider.cluster devnet
