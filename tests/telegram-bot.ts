@@ -9,7 +9,7 @@ import {
   MINT_SIZE,
   getMinimumBalanceForRentExemptMint,
 } from "@solana/spl-token";
-import { PublicKey, Keypair, SystemProgram, Transaction, SYSVAR_RENT_PUBKEY, LAMPORTS_PER_SOL, Connection } from "@solana/web3.js";
+import { PublicKey, Keypair, SystemProgram, Transaction, SYSVAR_RENT_PUBKEY, LAMPORTS_PER_SOL, Connection, clusterApiUrl } from "@solana/web3.js";
 
 
 describe("treehoppers-contract", () => {
