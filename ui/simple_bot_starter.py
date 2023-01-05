@@ -21,7 +21,7 @@ async def checkBalance(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
     # Send the request
-    response = requests.post(endpoint_url)
+    response = requests.get(endpoint_url)
 
     # Check the response
     if response.status_code == 200:
@@ -34,7 +34,7 @@ async def checkBalance(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 
 if __name__ == '__main__':
-    application = Application.builder().token('1433555369:AAF4KbunZ69OB7-DOIy6TpJBRSvnOrLvXYc').build()
+    application = Application.builder().token('Token').build()
     
     start_handler = CommandHandler('start', start)
     application.add_handler(start_handler)

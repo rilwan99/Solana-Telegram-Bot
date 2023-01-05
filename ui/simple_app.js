@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 // Parse the request body as JSON
 app.use(bodyParser.json());
 
-app.post('/', (req,res) => {
+app.get('/', (req,res) => {
     // Create a connection to a Solana node
     const connection = new Connection(clusterApiUrl('devnet'))
     const publicKey = new PublicKey('7C4jsPZpht42Tw6MjXWF56Q5RQUocjBBmciEjDa8HRtp')

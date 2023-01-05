@@ -20,11 +20,12 @@ BALANCE = range(1)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_keyboard = [["Yes", "No"]]
-    await context.bot.send_message(chat_id=update.effective_chat.id,
-                                   text="Do you want to check your balance?",
-                                   reply_markup=ReplyKeyboardMarkup(
-                                       reply_keyboard, one_time_keyboard=True, input_field_placeholder="Yes/No"
-                                   ),)
+    await context.bot.send_message(
+      chat_id=update.effective_chat.id,
+      text="Do you want to check your balance?",
+      reply_markup=ReplyKeyboardMarkup(
+          reply_keyboard, one_time_keyboard=True, input_field_placeholder="Yes/No"
+      ),)
 
     return BALANCE
 
@@ -38,7 +39,7 @@ async def checkBalance(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
     # Send the request
-    response = requests.post(endpoint_url)
+    response = requests.get(endpoint_url)
 
     # Check the response
     if response.status_code == 200:
@@ -59,7 +60,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 if __name__ == '__main__':
-    application = Application.builder().token('1433555369:AAF4KbunZ69OB7-DOIy6TpJBRSvnOrLvXYc').build()
+    application = Application.builder().token('Token').build()
     
     conv_handler = ConversationHandler(
         entry_points=[
